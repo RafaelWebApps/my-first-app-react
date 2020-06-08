@@ -12,10 +12,12 @@ class ShowItens extends React.Component{
     getList(){
         let strList = this.props.itens;
         return strList.map(item=>{
-            return <li key={item}> 
-                { item }
-                {this.btUpdate(item)}
-                {this.btDelete(item) }
+            return <li key={item.id}> 
+                { item.data.item } | 
+                { item.data.marca } | 
+                { item.data.quant } 
+                {this.btUpdate(item.id)}
+                {this.btDelete(item.id) }
             </li>
         })
     }
